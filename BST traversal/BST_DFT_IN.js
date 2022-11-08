@@ -10,7 +10,7 @@ class BST {
   constructor() {
     this.root = null;
   }
-    // preOrder
+    // inOrder
   DFS() {
     if(!this.root) {
       return false;
@@ -18,17 +18,14 @@ class BST {
     let result = [];
     let root = this.root;
     const traverse = root => {
-    result.push(root.val) 
       if(root.left){  
         traverse(root.left)
         }
-        //result.push(root.val) << inOrder
+        result.push(root.val)
       if (root.right) 
       { 
         traverse(root.right)
       }
-      // postOrder 
-      //result.push(root.val)
     }
     traverse(root);
     return result;
@@ -45,5 +42,3 @@ tree.root.right.left = new Node(12);
 
 
 tree.DFS()
-
-
